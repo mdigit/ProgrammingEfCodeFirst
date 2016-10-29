@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A47FBFAB-3694-4A87-A11F-88D740C2995B}</ProjectGuid>
+    <ProjectGuid>{52889DB8-0706-416F-986C-3176B7F2A3F0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProgrammingEfCodeFirst</RootNamespace>
+    <RootNamespace>ProgrammingEfCodeFirst.App</RootNamespace>
     <AssemblyName>ProgrammingEfCodeFirst</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -52,20 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bll\PatientService.cs" />
-    <Compile Include="Dal\VetContext.cs" />
-    <Compile Include="Domain\AnimalType.cs" />
-    <Compile Include="Domain\Patient.cs" />
-    <Compile Include="Domain\Visit.cs" />
-    <Compile Include="Migrations\201610281905539_InitialCreate.cs" />
-    <Compile Include="Migrations\201610281905539_InitialCreate.Designer.cs">
-      <DependentUpon>201610281905539_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610281913096_First.cs" />
-    <Compile Include="Migrations\201610281913096_First.Designer.cs">
-      <DependentUpon>201610281913096_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Bll\BreakAwayDataService.cs" />
+    <Compile Include="Bll\EventDataService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,12 +62,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610281905539_InitialCreate.resx">
-      <DependentUpon>201610281905539_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610281913096_First.resx">
-      <DependentUpon>201610281913096_First.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Dal\Dal.csproj">
+      <Project>{c50beef4-4bcf-4d29-91b9-a31d62224075}</Project>
+      <Name>Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{c1f6cbc4-3f0c-413a-8690-4acd8e554f50}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
