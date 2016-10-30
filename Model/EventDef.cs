@@ -5,12 +5,10 @@ namespace ProgrammingEfCodeFirst.Model
 {
     public class EventDef
     {
-        public Guid EventDefId { get; set; }
+        public int EventDefId { get; set; }
         public string Code { get; set; }
-
-        [ForeignKey("ResetEvent")]
-        public Guid? ResetDefId { get; set; }
-
+        public int? ResetEventId { get; set; }
+        [ForeignKey("ResetEventId")]
         public virtual EventDef ResetEvent { get; set; }
     }
 }
